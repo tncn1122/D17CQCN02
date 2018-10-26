@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>		// __gcd()
 using namespace std;
 
 struct frac
@@ -28,19 +29,34 @@ void cal(struct frac firstNum, struct frac secNum, char operat)
 		case '+':
 			{
 				cout <<"\n\tAnswer = ";
-				cout << (a*d + b*c)/(b*d);
-				break;
+				if ((a*d + b*c) % (b*d) == 0)
+				{
+					cout << (a*d + b*c) / (b*d);
+					break;
+				}
+				cout << (a*d + b*c)/__gcd((a*d + b*c), (b*d)) << "/" << (b*d)/__gcd((a*d + b*c), (b*d));	//rut gon phan so
+				break;	
 			}
 		case '-':
 			{
 				cout <<"\n\tAnswer = ";
-				cout << (a*d-b*c)/(b*d);
+				if ((a*d-b*c) % (b*d) == 0)
+				{
+					cout << (a*d-b*c) / (b*d);
+					break;
+				}
+				cout << (a*d-b*c)/__gcd((a*d-b*c), (b*d)) << "/" << (b*d)/__gcd((a*d-b*c), (b*d));	//rut gon phan so
 				break;
 			}
 		case '*':
 			{
 				cout <<"\n\tAnswer = ";
-				cout <<	(a*c)/(b*d);
+				if ((a*c) % (b*d) == 0)
+				{
+					cout << (a*c) / (b*d);
+					break;
+				}
+				cout <<	(a*c)/__gcd((a*c), (b*d)) << "/" << (b*d)/__gcd((a*c), (b*d));		//rut gon phan so
 				break;
 			}
 		case '/':
@@ -51,7 +67,12 @@ void cal(struct frac firstNum, struct frac secNum, char operat)
 					break;
 				}
 				cout <<"\n\tAnswer = ";
-				cout << (a*d)/(b*c);
+				if ((a*d) % (b*c) == 0)
+				{
+					cout << (a*d) / (b*c);
+					break;
+				}
+				cout << (a*d)/__gcd((a*d), (b*c)) << "/" << (b*c)/__gcd((a*d), (b*c));	//rut gon phan so
 				break;
 			}
 	}
