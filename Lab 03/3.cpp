@@ -21,12 +21,15 @@ public:
 int main()
 {	
 	char key;
-	do{
+	do
+	{
 		SerialNum obj[3];
-		for(int i=0; i<3; i++) 
+		for(int i = 0; i < 3; i++) 
 			obj[i].DisplayObj();
+
 		cout<<"\nContinue? (y/n): ";
 		cin >> key;
+
 	}while(key == 'y' || key == 'Y');
 	return 0;
 }
