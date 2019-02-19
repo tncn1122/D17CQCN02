@@ -3,7 +3,7 @@
 using namespace std;
 
 // a.
-bool isPrime(int num)
+bool IsPrime(int num)
 {
 	if (num < 2)
 		return false;
@@ -19,12 +19,12 @@ bool isPrime(int num)
 }
 
 // b.
-void printFirstPrimes(int n)
+void PrintFirstPrimes(int n)
 {
 	int num = 2;
 	while(n > 0)
 	{
-		if (isPrime(num))
+		if (IsPrime(num))
 		{
 			n--;
 			cout << num << " ";
@@ -37,6 +37,6 @@ int main()
 {
 	int n;
 	cin >> n;
-	printFirstPrimes(n);
+	PrintFirstPrimes(n);
 	return 0;
 }

@@ -2,7 +2,7 @@
 #include <math.h>      // sqrt()
 using namespace std;
 
-bool isPrime(int num)
+bool IsPrime(int num)
 {
 	if (num < 2)
 		return false;
@@ -17,7 +17,7 @@ bool isPrime(int num)
 	}
 }
 
-bool isRev(int num)
+bool IsRev(int num)
 {
 	int rev = 0;
 	int x = num;
@@ -33,12 +33,12 @@ bool isRev(int num)
 		return false;
 }
 
-int countNum(int a, int b)
+int CountNum(int a, int b)
 {
 	int cnt = 0;
 	for ( ;a <= b; a++)
 	{
-		if (isRev(a) && isPrime(a))
+		if (IsRev(a) && IsPrime(a))
 		{
 			cnt++;
 		}
@@ -53,7 +53,7 @@ int main()
 //	freopen("Dulieu.in", "r", stdin);
 //	freopen("KQ.out", "w", stdout);
 	cin >> A >> B;
-	cout << countNum(A, B);
+	cout << CountNum(A, B);
 //	fclose (stdin);
 //	fclose (stdout);
 	 
